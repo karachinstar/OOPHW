@@ -1,5 +1,5 @@
 package interf;
 
-public interface YearInMounth<T> {
+public interface ConvertAge<T> {
     Integer apply(T t);
 }

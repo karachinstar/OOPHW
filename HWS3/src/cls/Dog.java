@@ -1,7 +1,5 @@
 package cls;
 
-import interf.YearInMounth;
-
 public class Dog extends Animal {
     private String name;
     private Integer age;
@@ -52,13 +50,6 @@ public class Dog extends Animal {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'setName'");
     }
-
-    @Override
-    public Integer apply(Integer t) {
-        YearInMounth<Integer> mounth = l -> l * 12;
-        return mounth.apply(getAge());
-    }
-
     @Override
     public Integer setAge() {
         // TODO Auto-generated method stub

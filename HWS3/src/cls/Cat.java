@@ -1,12 +1,10 @@
 package cls;
 
-import interf.YearInMounth;
-
-public class Cat extends Animal{
+public class Cat extends Animal {
     private String name;
     private Integer age;
 
-    public Cat(){
+    public Cat() {
         name = "name";
         age = 0;
     }
@@ -16,19 +14,19 @@ public class Cat extends Animal{
         this.age = age;
     }
 
-    void setName(String name){
+    void setName(String name) {
         this.name = name;
     }
 
-    void setAge(Integer age){
+    void setAge(Integer age) {
         this.age = age;
     }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 
-    public Integer getAge(){
+    public Integer getAge() {
         return age;
     }
 
@@ -37,6 +35,7 @@ public class Cat extends Animal{
     public void startSwim() {
         System.out.printf("Мяу, %s не умеет плавать\n", name);
     }
+
     @Override
     public void showAnimal() {
         System.out.println("Мяу! Меня зовут " + name + ". Мне " +
@@ -60,9 +59,4 @@ public class Cat extends Animal{
         throw new UnsupportedOperationException("Unimplemented method 'setAge'");
     }
 
-    @Override
-    public Integer apply(Integer t) {
-        YearInMounth<Integer> mounth = l -> l * 12;
-        return mounth.apply(getAge());
-    }
 }

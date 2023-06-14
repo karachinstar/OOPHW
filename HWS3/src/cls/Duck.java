@@ -1,7 +1,5 @@
 package cls;
 
-import interf.YearInMounth;
-
 public class Duck extends Animal{
     private String name;
     private Integer age;
@@ -60,9 +58,4 @@ public class Duck extends Animal{
         throw new UnsupportedOperationException("Unimplemented method 'setAge'");
     }
 
-   @Override
-    public Integer apply(Integer t) {
-        YearInMounth<Integer> mounth = l -> l * 12;
-        return mounth.apply(getAge());
-    }
 }
