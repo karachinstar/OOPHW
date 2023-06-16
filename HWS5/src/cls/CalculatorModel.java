@@ -12,7 +12,7 @@ public class CalculatorModel {
     public void mult(double number){
         result *= number;
     }
-    public void devision(double number){
+    public void division(double number){
         CalculatorView localNumber = new CalculatorView();
         while (number ==0){
             System.out.println("Cannot divide by zero, please enter another number");
@@ -22,6 +22,13 @@ public class CalculatorModel {
     }
 
     public void pow(double number){result = (Math.pow(result, number));
+    }
+    public void fact(double number){
+        number = 1;
+        for (int i = 1; i <= result; i++) {
+            number *= i;
+        }
+        result = number;
     }
     public double getResult() {
         return result;
