@@ -1,9 +1,6 @@
-package HWS6.src;
-
-
-import HWS6.src.cls.CalculatorModel;
-import HWS6.src.cls.CalculatorPresenter;
-import HWS6.src.cls.CalculatorView;
+import cls.CalculatorModel;
+import cls.CalculatorPresenter;
+import cls.CalculatorView;
 
 public class Program {
     public static void main(String[] args) {

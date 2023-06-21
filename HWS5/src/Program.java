@@ -10,5 +10,6 @@ public class Program {
         CalculatorPresenter presenter = new CalculatorPresenter(view, model);
 
         presenter.performCalculation();
+
     }
 }

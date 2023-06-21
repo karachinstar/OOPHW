@@ -1,4 +1,4 @@
-package HWS7.src.cls;
+package cls;
 
 public class CalculatorModel {
     private double result;

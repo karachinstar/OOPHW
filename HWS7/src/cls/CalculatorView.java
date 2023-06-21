@@ -1,4 +1,4 @@
-package HWS7.src.cls;
+package cls;
 
 import java.util.Scanner;
 

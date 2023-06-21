@@ -1,4 +1,4 @@
-package HWS6.src.cls;
+package cls;
 
 public class CalculatorPresenter {
     private CalculatorView view;
