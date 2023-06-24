@@ -1,89 +1,87 @@
 package cls;
 
+import arhiv.CalculatorModel;
 import cls.model.additionModel;
-
-import java.io.FileWriter;
+import cls.model.divisionModel;
+import cls.model.multiplicationModel;
+import cls.model.subtractionModel;
 
 import static cls.CalculatorView.zn;
 
-public class CalculatorPresenter {
+public class CalculatorPresenter{
+    private divisionModel div;
+    private multiplicationModel mult;
+    private subtractionModel sub;
     private additionModel add;
     private CalculatorView view;
-    private CalculatorModel model;
 
-    public CalculatorPresenter(CalculatorView view, CalculatorModel model) {
+
+    public CalculatorPresenter(CalculatorView view, additionModel add,
+                               subtractionModel sub, multiplicationModel mult,
+                               divisionModel div) {
         this.view = view;
-        this.model = model;
         this.add = add;
+        this.sub = sub;
+        this.mult = mult;
+        this.div = div;
     }
 
     public void performCalculation() {
         StringBuilder newTask = new StringBuilder();
         boolean n = false;
         while(n == false) {
-            double number1 = view.getNum();
-            double number2 = view.getNum();
+            System.out.println("Операции проводятся с комплексными числами вида a±bi");
+            double number1 = view.getNum1();
+            double number2 = view.getNum2();
             double number3;
             double number4;
-            //model.setResult(number1);
 
             char operator = view.getInputOperator();
-            double number = 0;
 
 
             switch (operator) {
                 case 's':
                     n = true;
                     break;
-//                case '!':
-//                    newTask.append(model.getResult());
-//                    model.fact(model.getResult());
-//                    newTask.append(operator).append("=").append(model.getResult()).append("\n");
-//                    break;
-//                case '^':
-//                    newTask.append(model.getResult());
-//                    number = view.getNum();
-//                    model.pow(number);
-//                    newTask.append(operator).append(number).append("=").append(model.getResult()).append("\n");
-//                    break;
                 case '+':
                     newTask.append("(").append(number1).append(zn(number2)).append(number2).append("i").append(")");
-                    number3 = view.getNum();
-                    number4 = view.getNum();
+                    number3 = view.getNum1();
+                    number4 = view.getNum2();
                     add.addition(number1,number2,number3,number4);
                     newTask.append(operator).append("(").append(number3).append(zn(number4)).append(number4).append("i")
                             .append(")").append("=").append(add.getResult()).append("\n");
+                    view.displayResult(add.getResult());
                     break;
                 case '-':
                     newTask.append("(").append(number1).append(zn(number2)).append(number2).append("i").append(")");
-                    number3 = view.getNum();
-                    number4 = view.getNum();
-                    model.subs(number1,number2,number3,number4);
+                    number3 = view.getNum1();
+                    number4 = view.getNum2();
+                    sub.substraction(number1,number2,number3,number4);
                     newTask.append(operator).append("(").append(number3).append(zn(number4)).append(number4).append("i")
-                            .append(")").append("=").append(model.getResult()).append("\n");
+                            .append(")").append("=").append(sub.getResult()).append("\n");
+                    view.displayResult(sub.getResult());
                     break;
                 case '*':
                     newTask.append("(").append(number1).append(zn(number2)).append(number2).append("i").append(")");
-                    number3 = view.getNum();
-                    number4 = view.getNum();
-                    model.mult(number1,number2,number3,number4);
+                    number3 = view.getNum1();
+                    number4 = view.getNum2();
+                    mult.multiplication(number1,number2,number3,number4);
                     newTask.append(operator).append("(").append(number3).append(zn(number4)).append(number4).append("i")
-                            .append(")").append("=").append(model.getResult()).append("\n");
+                            .append(")").append("=").append(mult.getResult()).append("\n");
+                    view.displayResult(mult.getResult());
                     break;
                 case '/':
                     newTask.append("(").append(number1).append(zn(number2)).append(number2).append("i").append(")");
-                    number3 = view.getNum();
-                    number4 = view.getNum();
-                    model.division(number1,number2,number3,number4);
+                    number3 = view.getNum1();
+                    number4 = view.getNum2();
+                    div.division(number1,number2,number3,number4);
                     newTask.append(operator).append("(").append(number3).append(zn(number4)).append(number4).append("i")
-                            .append(")").append("=").append(model.getResult()).append("\n");
+                            .append(")").append("=").append(div.getResult()).append("\n");
+                    view.displayResult(div.getResult());
                     break;
                 default:
                     System.out.println("Invalid operator");
             }
-            view.displayResult(model.getResult());
-
-
             view.recordLog(newTask);
 
 

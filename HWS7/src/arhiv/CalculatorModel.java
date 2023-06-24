@@ -1,4 +1,6 @@
-package cls;
+package arhiv;
+
+import cls.CalculatorView;
 
 public class CalculatorModel {
     private String result;
@@ -33,8 +35,8 @@ public class CalculatorModel {
             CalculatorView localNumber1 = new CalculatorView();
             CalculatorView localNumber2 = new CalculatorView();
             System.out.println("Cannot divide by zero, please enter another number");
-            num3 = localNumber1.getNum();
-            num4 = localNumber2.getNum();
+            num3 = localNumber1.getNum1();
+            num4 = localNumber2.getNum2();
         }
         String t;
         if((((num2 * num3) / ((num3 * num3) + (num4 * num4))) - ((num1 * num4) / ((num3 * num3) + (num4 * num4)))) >= 0){

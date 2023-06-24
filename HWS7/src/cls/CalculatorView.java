@@ -6,15 +6,25 @@ import java.util.Scanner;
 public class CalculatorView {
     Scanner sc = new Scanner(System.in);
 
-    public Double getNum() {
-        System.out.print("Введите число: ");
+    public Double getNum1() {
+        System.out.print("Введите вещественную часть комплексного числа - a: ");
         while(sc.hasNextDouble() != true){
             System.out.println("Вы ввели не число");
-            System.out.print("Введите число: ");
+            System.out.print("Введите вещественную часть комплексного числа - a: ");
             sc = new Scanner(System.in);
         }
         return sc.nextDouble();
     }
+    public Double getNum2() {
+        System.out.print("Введите мнимую часть комплексного числа - b: ");
+        while(sc.hasNextDouble() != true){
+            System.out.println("Вы ввели не число");
+            System.out.print("Введите мнимую часть комплексного числа - b: ");
+            sc = new Scanner(System.in);
+        }
+        return sc.nextDouble();
+    }
+
 
 
 

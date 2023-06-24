@@ -15,7 +15,7 @@ public class additionModel {
         return result;
     }
 
-//    public void setResult(String result) {
-//        this.result = result;
-//    }
+    public void setResult(String result) {
+        this.result = result;
+    }
 }
