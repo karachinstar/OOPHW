@@ -19,8 +19,8 @@ public class divisionModel {
         } else {
             t = "";
         }
-        result = String.valueOf((((num1 * num3) + (num2 * num4)) / ((num3 * num3) + (num4 * num4))) + t
-                + String.valueOf(((num2 * num3) - (num1 * num4)) / ((num3 * num3) + (num4 * num4))) + "i");
+        result = (String.format("%.2f", ((((num1 * num3) + (num2 * num4)) / ((num3 * num3) + (num4 * num4)))))) + t
+                + (String.format("%.2f", ((num2 * num3) - (num1 * num4)) / ((num3 * num3) + (num4 * num4))) + "i");
 
     }
 

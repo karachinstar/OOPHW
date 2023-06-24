@@ -5,8 +5,10 @@ import cls.model.divisionModel;
 import cls.model.multiplicationModel;
 import cls.model.subtractionModel;
 
+import java.io.IOException;
+
 public class Program {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         System.out.println("Добро пожаловать в калькулятор комплексных чисел!");
         CalculatorView view = new CalculatorView();
         additionModel add = new additionModel();

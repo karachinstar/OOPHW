@@ -1,6 +1,6 @@
 package cls;
 
-import java.io.FileWriter;
+import java.io.*;
 import java.util.Scanner;
 
 public class CalculatorView {
@@ -30,7 +30,7 @@ public class CalculatorView {
 
     public char getInputOperator() {
         System.out.print("Введите оператор ( + (сложение), - (вычитание), * (умножение),\n" +
-                " / (деление), ^ (возведение в степень), ! (факториал) или букву s для выхода): ");
+                " / (деление), h для вызова истории операций или букву s для выхода): ");
         return sc.next().charAt(0);
     }
     public void displayResult(String result) {
@@ -46,7 +46,7 @@ public class CalculatorView {
 
     public void recordLog(StringBuilder newTask) {
         try {
-            FileWriter fw = new FileWriter("log_task3.txt", true);
+            FileWriter fw = new FileWriter("log_calc.txt", true);
             fw.write(newTask.toString());
             fw.close();
             newTask.setLength(0);
@@ -54,4 +54,13 @@ public class CalculatorView {
             System.out.println("ERROR!");
         }
     }
+
+    public void readLog() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        File f = new File("log_calc.txt");
+        BufferedReader fin = new BufferedReader(new FileReader(f));
+        String line;
+        while ((line = fin.readLine()) != null) System.out.println(line);
+    }
+
 }
