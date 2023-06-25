@@ -1,5 +1,7 @@
 package cls;
 
+import View.checkNum;
+
 public class CalculatorModel {
     private double result;
 
@@ -13,7 +15,7 @@ public class CalculatorModel {
         result *= number;
     }
     public void division(double number){
-        CalculatorView localNumber = new CalculatorView();
+        checkNum localNumber = new checkNum();
         while (number ==0){
             System.out.println("Cannot divide by zero, please enter another number");
             number = localNumber.getNum();

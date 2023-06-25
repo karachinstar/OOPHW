@@ -1,13 +1,15 @@
+import View.checkNum;
 import cls.CalculatorModel;
 import cls.CalculatorPresenter;
-import cls.CalculatorView;
+import View.CalculatorView;
 
 public class Program {
     public static void main(String[] args) {
         System.out.println("Добро пожаловать в калькулятор!");
         CalculatorView view = new CalculatorView();
         CalculatorModel model = new CalculatorModel();
-        CalculatorPresenter presenter = new CalculatorPresenter(view, model);
+        checkNum num = new checkNum();
+        CalculatorPresenter presenter = new CalculatorPresenter(view, model, num);
 
         presenter.performCalculation();
     }
